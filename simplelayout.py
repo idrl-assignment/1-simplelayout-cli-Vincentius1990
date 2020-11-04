@@ -1,4 +1,5 @@
 import argparse
+import sys
 
 
 def main():
@@ -22,7 +23,8 @@ def main():
         sys.exit()
     else:
         path = r'D:/test'
-        os.mkdir(path + args.outdir + args.file_name + '.mat',path + args.outdir + args.file_name + '.jpg')
+        os.mkdir(path + args.outdir + args.file_name + '.mat',
+                 path + args.outdir + args.file_name + '.jpg')
 
 
 if __name__ == "__main__":
