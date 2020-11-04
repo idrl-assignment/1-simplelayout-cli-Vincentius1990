@@ -18,9 +18,10 @@ def main():
     parser.add_argument("--file_name", type=str,
                         help="display the positions_of_unit")
     args = parser.parse_args()
+    n = args.board_grid/args.unit_grid
     if args.board_grid % args.unit_grid != 0:
         sys.exit()
-    elif args.positions < 1 | args.positions > (args.board_grid/args.unit_grid)**2:
+    elif args.positions < 1 | args.positions > n**2:
         sys.exit()
     else:
         path = r'D:/test'
