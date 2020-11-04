@@ -1,9 +1,10 @@
-# import argparse
+import argparse
 
 
 def main():
-    raise NotImplementedError  # TODO: 删除该行，并在下方实现代码
-
+    parser = argparse.ArgumentParser()
+    parser.parse_args()
+    
 
 if __name__ == "__main__":
     main()
