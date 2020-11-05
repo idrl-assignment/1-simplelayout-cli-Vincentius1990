@@ -5,18 +5,18 @@ import os
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--board_grid", type=int,
-                        help="display the board_grid")
+    parser.add_argument("--board_grid", type=int, 
+                        help="the board_grid")
     parser.add_argument("--unit_grid", type=int,
-                        help="display the unit_grid")
+                        help="the unit_grid")
     parser.add_argument("--unit_n", type=int,
-                        help="display the number_of_unit")
-    parser.add_argument("--positions", type=int,
-                        help="display the positions_of_unit")
+                        help="the number_of_unit")
+    parser.add_argument("--positions", type=int, 
+                        help="the positions")                       
     parser.add_argument("-o", "--outdir", type=str,
-                        help="display the positions_of_unit")
-    parser.add_argument("--file_name", type=str,
-                        help="display the positions_of_unit")
+                        help="the outdir")
+    parser.add_argument("--file_name", type=str, default='example',
+                        help="the file_name")
     args = parser.parse_args()
     n = args.board_grid/args.unit_grid
     if args.board_grid % args.unit_grid != 0:
