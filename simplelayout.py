@@ -1,11 +1,11 @@
 import argparse
 import sys
-from pathlib import path
+from pathlib import Path
 
 
 def main():
-    parser = argparse.ArgumentParser()  
-    parser.add_argument("--board_grid", type=int,  
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--board_grid", type=int,
                         help="the board_grid")
     parser.add_argument("--unit_grid", type=int,
                         help="the unit_grid")
@@ -18,15 +18,15 @@ def main():
     parser.add_argument("--file_name", type=str, default='example',
                         help="the file_name")
     args = parser.parse_args()
-
     if args.board_grid % args.unit_grid != 0:
         sys.exit('不能整除')
-    elif len(args.positions) != args.unit_n | args.positions < 1 | \
-        args.positions > (args.board_grid/args.unit_grid)**2:
-        sys.exit('组件编号有误')
+    elif len(args.positions) != args.unit_n :
+        sys.exit('组件数量错误')
+    elif min(args.positions) < 1 | max(args.positions) > (args.board_grid/args.unit_grid)**2:
+        sys.exit('组件编号超出范围')
     else:
-        path(args.outdir + args.file_name + '.mat')
-        path(args.outdir + args.file_name + '.jpg')
+        Path(args.outdir + args.file_name + '.mat')
+        Path(args.outdir + args.file_name + '.jpg')
 
 
 if __name__ == "__main__":
