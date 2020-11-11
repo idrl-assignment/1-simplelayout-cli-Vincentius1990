@@ -18,11 +18,12 @@ def main():
     parser.add_argument("--file_name", type=str, default='example',
                         help="the file_name")
     args = parser.parse_args()
+    n = args.board_grid/args.unit_grid
     if args.board_grid % args.unit_grid != 0:
         sys.exit('不能整除')
-    elif len(args.positions) != args.unit_n :
+    elif len(args.positions) != args.unit_n:
         sys.exit('组件数量错误')
-    elif min(args.positions) < 1 | max(args.positions) > (args.board_grid/args.unit_grid)**2:
+    elif min(args.positions) < 1 | max(args.positions) > n**2:
         sys.exit('组件编号超出范围')
     else:
         Path(args.outdir + args.file_name + '.mat')
