@@ -1,6 +1,6 @@
 import argparse
 import sys
-import os
+from pathlib import path
 
 
 def main():
@@ -24,8 +24,8 @@ def main():
     elif len(args.positions) != args.unit_n | args.positions < 1 | args.positions > (args.board_grid/args.unit_grid)**2:
         sys.exit('组件编号有误')
     else:
-        os.mkdir(args.outdir + args.file_name + '.mat',
-                 args.outdir + args.file_name + '.jpg')
+        path(args.outdir + args.file_name + '.mat')
+        path(args.outdir + args.file_name + '.jpg')
 
 
 if __name__ == "__main__":
