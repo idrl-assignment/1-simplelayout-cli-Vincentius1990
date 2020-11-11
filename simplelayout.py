@@ -27,9 +27,9 @@ def main():
         sys.exit('组件编号超出范围')
     else:
         Path(args.outdir).mkdir(parents=True, exist_ok=True)
-        with open(args.outdir + '/' + args.file_name + '.mat', 'w') as f1:
+        with open(args.outdir + '/' + args.file_name + '.mat', 'w') as _:
             pass
-        with open(args.outdir + '/' + args.file_name + '.jpg', 'w') as f2:
+        with open(args.outdir + '/' + args.file_name + '.jpg', 'w') as _:
             pass
         print('done')
 
