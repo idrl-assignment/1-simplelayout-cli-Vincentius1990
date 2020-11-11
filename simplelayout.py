@@ -26,8 +26,12 @@ def main():
     elif min(args.positions) < 1 | max(args.positions) > n**2:
         sys.exit('组件编号超出范围')
     else:
-        Path(args.outdir + '/' + args.file_name + '.mat')
-        Path(args.outdir + '/' + args.file_name + '.jpg')
+        Path(args.outdir).mkdir(parents=True, exist_ok=True)
+        with open(args.outdir + '/' + args.file_name + '.mat', 'w') as f1:
+            pass
+        with open(args.outdir + '/' + args.file_name + '.jpg', 'w') as f2:
+            pass
+        print('done')
 
 
 if __name__ == "__main__":
